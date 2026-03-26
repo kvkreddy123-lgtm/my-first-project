@@ -1,0 +1,79 @@
+Entity modeling in BAML (Business/Application Modeling Language) is the process of defining the key objects (entities) in a system,
+their attributes, and how they relate to each other
+
+1. What is an Entity?
+
+An entity is any important object in your system.
+
+Real Estate Examples:
+Developer
+Project
+Land
+Unit (flat/house)
+Buyer
+Contractor
+
+These are the building blocks of your model
+
+2. Entity Attributes
+
+Each entity has properties (attributes).
+
+Example:
+Entity: Unit
+- unit_id
+- size
+- price
+- status (available/sold)
+
+3. Relationships Between Entities
+
+Entities don’t exist alone—they are connected.
+
+Example:
+Developer → owns → Project
+Project → contains → Units
+Buyer → purchases → Unit
+
+This shows how the system works structurally
+
+4. Why Entity Modeling is Important in BAML
+
+It helps you:
+
+Understand the system clearly
+Avoid missing important components
+Build correct workflows later
+Prepare for coding or automation
+
+5. Real Estate Example (Simple Model)
+Entity: Developer
+Entity: Project
+Entity: Unit
+Entity: Buyer
+
+Relationships:
+Developer → owns → Project
+Project → has → Unit
+Buyer → buys → Unit
+
+6. Entity Modeling vs Workflow Modeling
+Entity modeling = structure (what exists)
+Workflow modeling = behavior (what happens)
+
+You always start with entities, then build workflows on top
+
+7. Simple Analogy
+
+Think of a movie 🎬:
+
+Entities = actors, director, scenes
+Relationships = who works with whom
+Workflow = how the story progresses
+
+8. Key Benefit
+
+Once your entity model is clear:
+Everything else (logic, workflows, decisions) becomes much easier
+
+
