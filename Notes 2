@@ -1,0 +1,102 @@
+Step 1: Define Core Entities
+
+Start with the most important objects in a real estate project:
+
+Developer
+Project
+Land
+Unit
+Buyer
+Contractor
+Payment
+
+Step 2: Add Attributes to Each Entity
+
+Now give details to each entity:
+
+Entity: Developer
+- developer_id
+- name
+- company_name
+
+Entity: Project
+- project_id
+- name
+- location
+- total_units
+- status
+
+Entity: Land
+- land_id
+- area
+- price
+- approval_status
+
+Entity: Unit
+- unit_id
+- type (2BHK, 3BHK)
+- price
+- status (available/sold)
+
+Entity: Buyer
+- buyer_id
+- name
+- contact
+
+Entity: Payment
+- payment_id
+- amount
+- date
+- status
+
+
+ Step 3: Define Relationships
+
+This is the core of entity modeling:
+
+Developer → owns → Project
+Project → built_on → Land
+Project → contains → Unit
+Buyer → purchases → Unit
+Buyer → makes → Payment
+Contractor → builds → Project
+
+
+Step 4: Add Basic Logic (Mini BAML Layer)
+
+Now add simple rules:
+
+IF land.approval_status != approved:
+    project.status = "on hold"
+
+IF unit.status == sold:
+    assign buyer
+
+IF payment.status != completed:
+    do not confirm booking
+
+Step 5: Visual Understanding (Simple Flow)
+
+Think of it like this:
+
+Developer
+   ↓
+Project
+   ↓
+Land + Contractor
+   ↓
+Units
+   ↓
+Buyer → Payment
+
+
+Step 6: Practice Task for You
+
+extending this model:
+
+Add:
+
+Loan entity (bank financing)
+Rental system (tenant instead of buyer)
+Maintenance system
+
